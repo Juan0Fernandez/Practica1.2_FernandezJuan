@@ -36,8 +36,8 @@ public class Principal {
          System.out.println("1. Registrar Usuario.");
          System.out.println("2. Registrar Producto.");
          System.out.println("3. Realizar pedido.");
-         System.out.println("3. Imprimir pedido.");
-         System.out.println("4. Salir.");
+         System.out.println("4. Imprimir pedido.");
+         System.out.println("5. Salir.");
 
          opcionBucle = entrada.nextInt();//guanda el parametro que desea realizar el usuario 
          entrada.nextLine(); // Consumir la nueva línea
@@ -72,12 +72,12 @@ public class Principal {
 
                  for (int i = 1; i <= numProductos; i++) {//inicializa un bucle para la creacion de n Productos
 
-                	 System.out.println("Ingrese el nombre del producto:");
+                	 System.out.println("Ingrese el nombre del producto "+ i + ": ");
                      String nombreProducto = entrada.nextLine();
-                     System.out.println("Ingrese el precio del producto:");
+                     System.out.println("Ingrese el precio del producto "+ i + ": ");
                      double precioProducto = entrada.nextDouble();
                      entrada.nextLine(); // Consumir la nueva línea
-                     System.out.println("Ingrese el código del producto:");
+                     System.out.println("Ingrese el código del producto "+ i + ": ");
                      String codigoProducto = entrada.nextLine();
 
                      System.out.println("Si su producto es electrónico digite (E)caso contrario dijite (R)");
@@ -128,7 +128,7 @@ public class Principal {
                              usuario.agregarProductoAlCarrito(productosDisponibles.get(opcionProducto - 1));
                          } else if (opcionProducto > productosDisponibles.size() && opcionProducto <= index) {
                              usuario.agregarProductoAlCarrito(productosIngresados.get(opcionProducto - productosDisponibles.size() - 1));
-                             usuario.verProductosEnCarrito();
+                             
                               
                          } else if (opcionProducto != 0) {
                              System.out.println("Opción no válida. Intente de nuevo.");

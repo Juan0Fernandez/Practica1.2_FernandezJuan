@@ -35,20 +35,20 @@ public class Carrito {
             System.out.println(producto);
         }
     }
-	
-    public void realizarPedido() { //metodo que finalizael pedido y limpia el carrito
-       
-        System.out.println("Pedido realizado con éxito. ¡Gracias por su compra!");
-        
-        productos.clear(); // Limpiar el carrito después de realizar el pedido
-    }
-    
     public double calcularTotal() {//metodo para calcular el total de los productos
         int total = 0;
         for (Producto producto : productos) {
             total += producto.getPrecio();
         }
-        System.out.println("Total a pagar :             ");
+        System.out.println("Total a pagar :  "+ total);
 		return total;
     }
+    
+    public void realizarPedido() {
+        System.out.println("Pedido realizado con éxito. ¡Gracias por su compra!");
+        
+        productos.clear(); // Limpiar el carrito después de realizar el pedido
+    }
+    
+    
 }
