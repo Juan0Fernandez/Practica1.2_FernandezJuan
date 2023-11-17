@@ -4,58 +4,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carrito {
-	
-	private List<Producto> productos;
+	private ArrayList<Producto> productos;//atributo de carrito
 
     public Carrito() {
-        this.productos = new ArrayList<>();
+        this.productos = new ArrayList<>();//inicializa una lista de productos
     }
-
-    public Carrito( List<Producto> productos) {
-		super();
-		this.productos = productos;
-	}
-
-  
-	public List<Producto> getProductos() {
+	public ArrayList<Producto> getProductos() {
 		return productos;
 	}
-
-	public void setProductos(List<Producto> productos) {
+	
+	public void setProductos(ArrayList<Producto> productos) {
 		this.productos = productos;
 	}
 
 
-
-	@Override
+	@Override//metodo to string
 	public String toString() {
 		return "Carrito [productos del carrito:\n " + productos + "]" ;
 	}
 
-	public void agregarProducto(Producto producto) {
+	public void agregarProducto(Producto producto) {//metodo para agregar productos al carrito
         productos.add(producto);
-        System.out.println("Producto agregado al carrito: " + producto.getNombreProducto());
+      //se muestra en consola lo que se agrego al carrito
+        System.out.println("Producto agregado al carrito: " + producto.getNombreProducto()); 
     }
 
-
-    public void verProductos() {
+    public void verProductos() {//metodo para ver los productos en el carrito
+    	System.out.println("Productos en el carrito: ");
     	for (Producto producto : productos) {
-            System.out.println(producto.getNombreProducto() + " - " + producto.getPrecio());
+            System.out.println(producto);
         }
     }
 	
-    public void realizarPedido() {
-        // Lógica para realizar un pedido
+    public void realizarPedido() { //metodo que finalizael pedido y limpia el carrito
+       
         System.out.println("Pedido realizado con éxito. ¡Gracias por su compra!");
         
         productos.clear(); // Limpiar el carrito después de realizar el pedido
     }
     
-    public double calcularTotal() {
+    public double calcularTotal() {//metodo para calcular el total de los productos
         int total = 0;
         for (Producto producto : productos) {
             total += producto.getPrecio();
         }
+        System.out.println("Total a pagar :             ");
 		return total;
     }
 }
